@@ -1,0 +1,18 @@
+package com.rookies4.myspringbootlab.config;
+
+import com.rookies4.myspringbootlab.entity.MyEnvironment;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+@Configuration
+@Profile("prod")
+public class ProdConfig {
+
+    @Bean
+    public MyEnvironment myEnvironment() {
+        MyEnvironment env = new MyEnvironment();
+        env.setMode("운영환경");
+        return env;
+    }
+}
