@@ -1,4 +1,4 @@
-package com.rookies4.myspringbootlab.entity;
+package com.rookies4.myspringbootlab.config;
 
 import lombok.Getter;
 import lombok.Setter;
