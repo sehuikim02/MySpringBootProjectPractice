@@ -1,6 +1,7 @@
 package com.rookies4.myspringbootlab.repository;
 
 import com.rookies4.myspringbootlab.entity.Book;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -16,7 +17,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@Transactional
+//@Transactional
 //@DataJpaTest
 public class BookRepositoryTest {
 
