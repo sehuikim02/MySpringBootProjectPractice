@@ -59,6 +59,7 @@ public class BookController {
     public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetail) {
         Book existBook = bookRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Book Not Found", HttpStatus.NOT_FOUND));
+        // 가격만 변동
         existBook.setPrice(bookDetail.getPrice());
 
         Book updatedBook = bookRepository.save(existBook);
