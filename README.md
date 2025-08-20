@@ -1,4 +1,4 @@
-### [실습2-3] Spring Boot와 JPA(Java Persistence API) 활용
+### [실습2-4] Spring Boot와 JPA(Java Persistence API) 활용
 
 * Book과 BookDetail 1:1 (OneToOne) entity 연관관계
     * FetchType.LAZY vs FetchType.EAGER
