@@ -1,14 +1,9 @@
 package com.rookies4.myspringbootlab.controller.dto;
+
 import com.rookies4.myspringbootlab.entity.Book;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.PositiveOrZero;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -37,7 +32,7 @@ public class BookDTO {
         private LocalDate publishDate;
 
         @Valid
-        private BookDetailDTO detailRequest;
+        private BookDetailDTO detail;
     }
 
     @Data

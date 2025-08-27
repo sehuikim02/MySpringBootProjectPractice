@@ -6,17 +6,18 @@ import lombok.*;
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
+@Table(name = "books")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "books")
+@Getter
+@Setter
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // DTO, Test 기준으로 id
+    @Column(name = "book_id")
+    private Long id;
 
     @Column(nullable = false)
     private String title;
@@ -31,13 +32,8 @@ public class Book {
 
     private LocalDate publishDate;
 
-    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private BookDetail bookDetail; // DTO & Test 기준 : bookDetail
-
-    public void setBookDetail(BookDetail detail) {
-        this.bookDetail = detail;
-        if (detail != null) {
-            detail.setBook(this);
-        }
-    }
+    @OneToOne(mappedBy = "book",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private BookDetail bookDetail;
 }
