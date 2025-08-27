@@ -35,7 +35,7 @@ public class BookDataInsertRunner implements CommandLineRunner {
 
         // 기존 데이터가 있는지 확인 (Publisher 없는 Book이 있는지)
         long existingBookCount = bookRepository.count();
-        
+
         // 이미 많은 데이터가 있다면 skip
         if (existingBookCount >= 15) {
             log.info("Sufficient book data already exists ({} books), skipping Book-only initialization", existingBookCount);
@@ -175,7 +175,7 @@ public class BookDataInsertRunner implements CommandLineRunner {
     /**
      * Book과 BookDetail을 함께 생성하는 헬퍼 메서드
      * 양방향 연관관계를 올바르게 설정합니다.
-     * 
+     *
      * @param title 도서 제목
      * @param author 저자
      * @param isbn ISBN
@@ -190,9 +190,9 @@ public class BookDataInsertRunner implements CommandLineRunner {
      * @return 생성된 Book 엔티티 (BookDetail과 연관관계 설정됨)
      */
     private Book createBookWithDetail(String title, String author, String isbn, Integer price,
-                                    LocalDate publishDate, String description, String language,
-                                    Integer pageCount, String publisher, String coverImageUrl, String edition) {
-        
+                                      LocalDate publishDate, String description, String language,
+                                      Integer pageCount, String publisher, String coverImageUrl, String edition) {
+
         // BookDetail 생성
         BookDetail detail = BookDetail.builder()
                 .description(description)
