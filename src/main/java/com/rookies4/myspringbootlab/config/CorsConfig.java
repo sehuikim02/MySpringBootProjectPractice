@@ -16,7 +16,7 @@ public class CorsConfig {
     public FilterRegistrationBean<?> corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOriginPatterns(List.of("*"));
-        configuration.setAllowCredentials(false);
+        configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(Arrays.asList(
                 "Access-Control-Allow-Headers",
                 "Access-Control-Allow-Origin",
